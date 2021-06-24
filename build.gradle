@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation "io.springfox:springfox-boot-starter:3.0.0"
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compileClasspath(group: 'io.swagger', name: 'swagger-codegen', version: '2.2.3')
+	compileClasspath(group: 'io.springfox', name: 'springfox-swagger2')
+	compileClasspath(group: 'io.springfox', name: 'springfox-swagger-ui')
+
+}
+
+test {
+	useJUnitPlatform()
+}
